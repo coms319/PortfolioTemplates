@@ -2,39 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customized Portfolio Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio Templates</a></li>
-            <li><a href="team.html">Our Team</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio Generator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Our Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main Content -->
-    <div id="main-content">
-        <form id="portfolio-form">
-          <h2>Create Your Portfolio</h2>
-          <label for="name">Full Name:</label>
-          <input type="text" id="name" name="name" required><br><br>
-      
-          <label for="experience">Experience:</label>
-          <textarea id="experience" name="experience"></textarea><br><br>
-      
-          <label for="profile-pic">Upload Profile Picture:</label>
-          <input type="file" id="profile-pic" accept="image/*"><br><br>
-      
-          <!-- Add more input fields for education, projects, etc... -->
-          
-          <button type="submit">Submit</button>
-      </form>    
+    <!-- Carousel Section for Template Previews -->
+    <div id="templateCarousel" class="carousel slide mt-5 container" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="myotherimages/template1-preview.jpg" class="d-block w-100" alt="Template 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Modern Portfolio</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="myotherimages/template2-preview.jpg" class="d-block w-100" alt="Template 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Classic Portfolio</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="myotherimages/template3-preview.jpg" class="d-block w-100" alt="Template 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Creative Portfolio</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#templateCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#templateCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
+    <!-- User Information Form -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Enter Your Information</h2>
+        <form id="user-info-form" class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-md-12">
+                <label for="experience" class="form-label">Professional Experience</label>
+                <textarea class="form-control" id="experience" rows="3"></textarea>
+            </div>
+            <div class="col-md-6">
+                <label for="education" class="form-label">Education</label>
+                <input type="text" class="form-control" id="education" required>
+            </div>
+            <div class="col-md-6">
+                <label for="skills" class="form-label">Skills</label>
+                <input type="text" class="form-control" id="skills" required>
+            </div>
+            <div class="col-md-12">
+                <label for="profile-pic" class="form-label">Profile Picture</label>
+                <input class="form-control" type="file" id="profile-pic" accept="image/*">
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
