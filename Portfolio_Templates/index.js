@@ -43,3 +43,15 @@ function loadPortfolioPage(content) {
         portfolioContent.appendChild(img);
     });
 }
+
+function selectTemplate(templateId) {
+  // Load the selected template dynamically and display a live preview
+  const previewSection = document.getElementById('live-preview');
+  previewSection.innerHTML = `You have selected ${templateId}.`;
+  // More logic to dynamically update the template with user data
+}
+
+document.getElementById('portfolio-form').addEventListener('submit', function (event) {
+  event.preventDefault(); 
+  // Logic to update portfolio with user input in real-time
+});
