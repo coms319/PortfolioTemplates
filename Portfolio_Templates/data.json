@@ -1,0 +1,26 @@
+{
+  "homePage": {
+      "texts": [
+          "Welcome to our Customized Portfolio Generator!",
+          "Easily create and personalize your own portfolio.",
+          "Get started by selecting a template."
+      ],
+      "images": [
+          "images/home1.jpg",
+          "images/home2.jpg",
+          "images/home3.jpg"
+      ]
+  },
+  "portfolioPage": {
+      "texts": [
+          "Choose from a variety of portfolio templates.",
+          "Templates are fully customizable.",
+          "Preview templates below."
+      ],
+      "images": [
+          "images/template1.jpg",
+          "images/template2.jpg",
+          "images/template3.jpg"
+      ]
+  }
+}
