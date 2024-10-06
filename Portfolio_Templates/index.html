@@ -18,7 +18,21 @@
 
     <!-- Main Content -->
     <div id="main-content">
-        <!-- Dynamic content will be loaded here -->
+        <form id="portfolio-form">
+          <h2>Create Your Portfolio</h2>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="experience">Experience:</label>
+          <textarea id="experience" name="experience"></textarea><br><br>
+      
+          <label for="profile-pic">Upload Profile Picture:</label>
+          <input type="file" id="profile-pic" accept="image/*"><br><br>
+      
+          <!-- Add more input fields for education, projects, etc... -->
+          
+          <button type="submit">Submit</button>
+      </form>    
     </div>
 
     <script src="index.js"></script>
