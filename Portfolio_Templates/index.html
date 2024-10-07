@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Generator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
@@ -12,13 +11,14 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Portfolio Generator</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Portfolio Templates</a>
@@ -34,6 +34,7 @@
     <!-- Carousel Section for Template Previews -->
     <div id="templateCarousel" class="carousel slide mt-5 container" data-bs-ride="carousel">
         <div class="carousel-inner">
+            <!-- Template 1 -->
             <div class="carousel-item active">
                 <img src="mymotherimages/template-preview1.jpeg" class="d-block w-100" alt="Template 1">
                 <div class="carousel-caption d-none d-md-block">
@@ -41,25 +42,12 @@
                     <button class="btn btn-primary" onclick="selectTemplate('template1')">Choose</button>
                 </div>
             </div>
+            <!-- Template 2 -->
             <div class="carousel-item">
                 <img src="mymotherimages/template-preview2.jpeg" class="d-block w-100" alt="Template 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Portfolio 02</h5>
                     <button class="btn btn-primary" onclick="selectTemplate('template2')">Choose</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="mymotherimages/template-preview3.jpeg" class="d-block w-100" alt="Template 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Portfolio 03</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('template3')">Choose</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="mymotherimages/template-preview4.jpeg" class="d-block w-100" alt="Template 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Portfolio 04</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('template4')">Choose</button>
                 </div>
             </div>
             <!-- Additional templates can be added here -->
@@ -77,12 +65,19 @@
     <!-- User Information Form -->
     <div class="container mt-5">
         <h2 class="text-center mb-4">Enter Your Information</h2>
-        <form id="user-info-form" class="row g-3" novalidate>
+        <form id="user-info-form" class="row g-3 needs-validation" novalidate>
             <div class="col-md-6">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" required>
                 <div class="invalid-feedback">
                     Please enter your full name.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="title" class="form-label">Professional Title</label>
+                <input type="text" class="form-control" id="title" required>
+                <div class="invalid-feedback">
+                    Please enter your professional title.
                 </div>
             </div>
             <div class="col-md-6">
@@ -92,10 +87,6 @@
                     Please enter a valid email address.
                 </div>
             </div>
-            <div class="col-md-12">
-                <label for="experience" class="form-label">Professional Experience</label>
-                <textarea class="form-control" id="experience" rows="3"></textarea>
-            </div>
             <div class="col-md-6">
                 <label for="education" class="form-label">Education</label>
                 <input type="text" class="form-control" id="education" required>
@@ -103,8 +94,19 @@
                     Please provide your education details.
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="skills" class="form-label">Skills</label>
+            <div class="col-md-12">
+                <label for="about" class="form-label">About Me</label>
+                <textarea class="form-control" id="about" rows="3" required></textarea>
+                <div class="invalid-feedback">
+                    Please write something about yourself.
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label for="experience" class="form-label">Professional Experience</label>
+                <textarea class="form-control" id="experience" rows="3"></textarea>
+            </div>
+            <div class="col-md-12">
+                <label for="skills" class="form-label">Skills (comma-separated)</label>
                 <input type="text" class="form-control" id="skills" required>
                 <div class="invalid-feedback">
                     Please list your skills.
@@ -115,7 +117,7 @@
                 <input class="form-control" type="file" id="profile-pic" accept="image/*">
             </div>
             <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Generate Portfolio</button>
             </div>
         </form>
     </div>
@@ -123,7 +125,7 @@
     <!-- Template Preview Section -->
     <div id="live-preview" class="container mt-5 text-center">
         <h2 class="text-center mb-4">Template Preview</h2>
-        <!-- Live template preview will appear here after selection -->
+        <!-- Live template preview will appear here after submission -->
     </div>
 
     <!-- Button to download the generated website -->
@@ -131,7 +133,9 @@
         <button id="download-btn" class="btn btn-success">Download Your Website</button>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include JSZip and FileSaver.js for download functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="index.js"></script>
