@@ -92,11 +92,11 @@ function loadTemplate(templateId, userData) {
 
 // Populate the template with user data
 function populateTemplateData(userData) {
-  document.querySelector(".name").textContent = userData.name;
-  document.querySelector(".email").textContent = userData.email;
-  document.querySelector(".experience").textContent = userData.experience;
-  document.querySelector(".education").textContent = userData.education;
-  document.querySelector(".skills").textContent = userData.skills;
+  if (userData.name) document.querySelector(".name").textContent = userData.name;
+  if (userData.email) document.querySelector(".email").textContent = userData.email;
+  if (userData.experience) document.querySelector(".experience").textContent = userData.experience;
+  if (userData.education) document.querySelector(".education").textContent = userData.education;
+  if (userData.skills) document.querySelector(".skills").textContent = userData.skills;
 
   if (userData.profilePic) {
     document.querySelector(".profile-img").src = userData.profilePic;
@@ -108,4 +108,27 @@ document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
   if (link.href === window.location.href) {
     link.classList.add("active");
   }
+});
+
+document.getElementById('download-btn').addEventListener('click', function () {
+  const zip = new JSZip();
+  const selectedTemplateId = document.querySelector('input[name="template"]:checked').value;
+
+  // Fetch the populated HTML content
+  const htmlContent = document.getElementById('live-preview').innerHTML;
+
+  // Add HTML content to the zip file
+  zip.file('index.html', htmlContent);
+
+  // Fetch and add the corresponding CSS file to the zip
+  fetch(`styles/${selectedTemplateId}.css`)
+      .then(response => response.text())
+      .then(cssContent => {
+          zip.file(`styles/${selectedTemplateId}.css`, cssContent);
+
+          // Generate the zip file and trigger download
+          zip.generateAsync({ type: 'blob' }).then(function (content) {
+              saveAs(content, 'personal-website.zip');
+          });
+      });
 });

@@ -37,45 +37,32 @@
             <div class="carousel-item active">
                 <img src="mymotherimages/template-preview1.jpeg" class="d-block w-100" alt="Template 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Modern Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template01')">Choose</button>
+                    <h5>Portfolio 01</h5>
+                    <button class="btn btn-primary" onclick="selectTemplate('template1')">Choose</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="mymotherimages/template-preview2.jpeg" class="d-block w-100" alt="Template 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Classic Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template02')">Choose</button>
+                    <h5>Portfolio 02</h5>
+                    <button class="btn btn-primary" onclick="selectTemplate('template2')">Choose</button>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="mymotherimages/template-preview3.jpeg" class="d-block w-100" alt="Template 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Creative Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template03')">Choose</button>
+                    <h5>Portfolio 03</h5>
+                    <button class="btn btn-primary" onclick="selectTemplate('template3')">Choose</button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="mymotherimages/template-preview4.jpeg" class="d-block w-100" alt="Template 4">
+                <img src="mymotherimages/template-preview4.jpeg" class="d-block w-100" alt="Template 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Elegant Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template04')">Choose</button>
+                    <h5>Portfolio 04</h5>
+                    <button class="btn btn-primary" onclick="selectTemplate('template4')">Choose</button>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="mymotherimages/template-preview5.jpeg" class="d-block w-100" alt="Template 5">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Professional Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template05')">Choose</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="mymotherimages/template-preview6.jpeg" class="d-block w-100" alt="Template 6">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Artistic Portfolio</h5>
-                    <button class="btn btn-primary" onclick="selectTemplate('Template06')">Choose</button>
-                </div>
-            </div>
+            <!-- Additional templates can be added here -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#templateCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -139,7 +126,14 @@
         <!-- Live template preview will appear here after selection -->
     </div>
 
+    <!-- Button to download the generated website -->
+    <div class="container text-center mt-4">
+        <button id="download-btn" class="btn btn-success">Download Your Website</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="index.js"></script>
     <script>
         // Custom form validation script

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="styles/creative-template.css">
+</head>
+<body>
+    <header>
+        <div class="overlay"></div>
+        <div class="container">
+            <img src="{{profilePic}}" alt="{{name}}" class="profile-pic">
+            <h1 class="name">{{name}}</h1>
+            <p class="title">{{title}}</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>{{about}}</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>{{experience}}</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p>{{education}}</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                {{#each skills}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Contact: <a href="mailto:{{email}}">{{email}}</a></p>
+        </div>
+    </footer>
+</body>
+</html>
