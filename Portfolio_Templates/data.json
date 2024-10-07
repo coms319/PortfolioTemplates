@@ -1,0 +1,53 @@
+{
+  "homePage": {
+    "texts": [
+      "Welcome to the Portfolio Generator!",
+      "Create your personalized portfolio website in just a few easy steps.",
+      "Choose a template, enter your information, and download your website."
+    ],
+    "images": [
+      "images/home-banner.jpg",
+      "images/feature-overview.jpg"
+    ]
+  },
+  "portfolioPage": {
+    "texts": [
+      "Select from a variety of professional templates.",
+      "Preview each template to find the one that best suits your style."
+    ],
+    "images": [
+      "mymotherimages/template-preview1.jpeg",
+      "mymotherimages/template-preview2.jpeg",
+      "mymotherimages/template-preview3.jpeg",
+      "mymotherimages/template-preview4.jpeg",
+      "mymotherimages/template-preview5.jpeg",
+      "mymotherimages/template-preview6.jpeg"
+    ]
+  },
+  "teamPage": {
+    "texts": [
+      "Meet the Team",
+      "We are a group of dedicated professionals passionate about helping you create the perfect portfolio."
+    ],
+    "teamMembers": [
+      {
+        "name": "Alice Johnson",
+        "role": "Lead Designer",
+        "bio": "Alice is an experienced designer with a passion for creating beautiful and user-friendly designs.",
+        "image": "images/team/alice.jpg"
+      },
+      {
+        "name": "Bob Smith",
+        "role": "Frontend Developer",
+        "bio": "Bob specializes in building responsive and interactive web applications.",
+        "image": "images/team/bob.jpg"
+      },
+      {
+        "name": "Charlie Lee",
+        "role": "Backend Developer",
+        "bio": "Charlie is an expert in server-side technologies and database management.",
+        "image": "images/team/charlie.jpg"
+      }
+    ]
+  }
+}
