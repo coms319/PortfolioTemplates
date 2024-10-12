@@ -32,8 +32,8 @@
     <!-- Main Content Layout -->
     <div class="container-fluid mt-4">
         <div class="row">
-            <!-- Left Side: Static Template Preview Images (reduced width) -->
-            <div class="col-md-2"> <!-- Reduced to 2 columns (half of previous width) -->
+            <!-- Template Preview Images -->
+            <div class="col-md-2">
                 <div id="template-previews" class="template-previews-container">
                     <div class="template-preview-item">
                         <img src="mymotherimages/template-preview1.jpeg" class="img-fluid" alt="Template 1">
@@ -56,30 +56,42 @@
                 </div>
             </div>
 
-            <!-- Center: User Information Form -->
-            <div class="col-md-6">
+             <!-- Center: User Information Form -->
+             <div class="col-md-6">
                 <div id="user-info-form" class="bg-secondary p-4 rounded">
-                    <h2 class="text-center mb-4">Enter Your Information</h2>
+                    <h4 class="mb-4 text-start">Enter Your Information</h4> <!-- Smaller title, aligned to the left -->
                     <form id="user-form">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="name" required>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="title" class="form-label">Professional Title</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="education" class="form-label">Education</label>
+                                <input type="text" class="form-control" id="education" required>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="title" class="form-label">Professional Title</label>
-                            <input type="text" class="form-control" id="title" required>
+                            <label for="about me" class="form-label">About Me</label>
+                            <textarea class="form-control" id="experience" rows="4"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <label for="experience" class="form-label">Professional Experience</label>
+                            <textarea class="form-control" id="experience" rows="4"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="education" class="form-label">Education</label>
-                            <input type="text" class="form-control" id="education" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="about" class="form-label">About Me</label>
-                            <textarea class="form-control" id="about" rows="3"></textarea>
+                            <label for="skills" class="form-label">Skills</label>
+                            <textarea class="form-control" id="skills" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="profile-pic" class="form-label">Profile Picture</label>
@@ -90,7 +102,7 @@
                 </div>
             </div>
 
-            <!-- Right Side: Dynamic Preview -->
+            <!-- Dynamic Preview -->
             <div class="col-md-3">
                 <div id="dynamic-preview" class="bg-secondary p-4 rounded">
                     <h4 class="text-center">Template Preview</h4>
