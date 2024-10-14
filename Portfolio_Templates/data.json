@@ -16,37 +16,27 @@
       "Preview each template to find the one that best suits your style."
     ],
     "images": [
-      "mymotherimages/template-preview1.jpeg",
-      "mymotherimages/template-preview2.jpeg",
-      "mymotherimages/template-preview3.jpeg",
-      "mymotherimages/template-preview4.jpeg",
-      "mymotherimages/template-preview5.jpeg",
-      "mymotherimages/template-preview6.jpeg"
+      "myotherimages/template-preview1.jpeg",
+      "myotherimages/template-preview2.jpeg",
+      "myotherimages/template-preview3.jpeg",
+      "myotherimages/template-preview4.jpeg",
+      "myotherimages/template-preview5.jpeg",
+      "myotherimages/template-preview6.jpeg"
     ]
   },
   "teamPage": {
-    "texts": [
-      "Meet the Team",
-      "We are a group of dedicated professionals passionate about helping you create the perfect portfolio."
-    ],
     "teamMembers": [
       {
-        "name": "Alice Johnson",
-        "role": "Lead Designer",
-        "bio": "Alice is an experienced designer with a passion for creating beautiful and user-friendly designs.",
-        "image": "images/team/alice.jpg"
+        "name": "Lucas Martins Sorge",
+        "role": "Full-stack Developer",
+        "bio": "Hello, my name is Lucas, and I am a Computer Science and Data Science student at Iowa State University. Throughout my studies and work experience, I have gained strong technical skills in web development, including front-end and back-end technologies such as HTML, CSS, JavaScript, ReactJS, Python, and NodeJS.",
+        "image": "./myotherimages/template-preview1.jpeg"
       },
       {
-        "name": "Bob Smith",
-        "role": "Frontend Developer",
-        "bio": "Bob specializes in building responsive and interactive web applications.",
-        "image": "images/team/bob.jpg"
-      },
-      {
-        "name": "Charlie Lee",
-        "role": "Backend Developer",
-        "bio": "Charlie is an expert in server-side technologies and database management.",
-        "image": "images/team/charlie.jpg"
+        "name": "Lucas Nerone Rillo",
+        "role": "Full-stack Developer",
+        "bio": "Hi, I am Lucas, a Computer Sciuence and Math student at Iowa State University. Through my experience on full-stack development, I learned jQuery, Angular, and React for the frontend, as well as Spring Boot and Django for the backend.",
+        "image": "./myotherimages/template-preview1.jpeg"
       }
     ]
   }
