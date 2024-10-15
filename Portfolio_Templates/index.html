@@ -46,76 +46,367 @@
 
     <!-- Main Content Layout -->
     <div class="container-fluid mt-4">
-        <div class="row">
-            <!-- Template Preview Images -->
-            <div class="col-md-2">
-                <div id="template-previews" class="template-previews-container">
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview1.jpeg" class="img-fluid" alt="Template 1">
-                    </div>
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview2.jpeg" class="img-fluid" alt="Template 2">
-                    </div>
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview3.jpeg" class="img-fluid" alt="Template 3">
-                    </div>
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview4.jpeg" class="img-fluid" alt="Template 4">
-                    </div>
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview5.jpeg" class="img-fluid" alt="Template 5">
-                    </div>
-                    <div class="template-preview-item">
-                        <img src="myotherimages/template-preview6.jpeg" class="img-fluid" alt="Template 6">
-                    </div>
-                </div>
+      <div class="row">
+        <!-- Template Preview Images -->
+        <div class="col-md-2">
+          <div class="template-previews-box bg-dark p-3 rounded">
+            <div id="template-previews" class="template-previews-container">
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview1.jpeg"
+                  alt="Template 1"
+                />
+              </div>
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview2.jpeg"
+                  alt="Template 2"
+                />
+              </div>
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview3.jpeg"
+                  alt="Template 3"
+                />
+              </div>
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview4.jpeg"
+                  alt="Template 4"
+                />
+              </div>
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview5.jpeg"
+                  alt="Template 5"
+                />
+              </div>
+              <div class="template-preview-item">
+                <img
+                  src="myotherimages/template-preview6.jpeg"
+                  alt="Template 6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enter Your Information Box -->
+        <div class="col-md-5 d-flex flex-column">
+          <div id="user-info-form-container" class="bg-secondary p-4 rounded">
+            <h4 class="mb-4 text-start">Enter Your Information</h4>
+
+            <!-- Profile Picture Box -->
+            <div class="profile-picture-box mb-4 p-3 bg-dark rounded">
+              <label for="profile-pic" class="form-label"
+                >Profile Picture</label
+              >
+              <div class="profile-picture-preview mb-2">
+                <img
+                  id="profile-picture-preview"
+                  src="/Portfolio_Templates/uploads/default-placeholder.png"
+                  alt="Profile Preview"
+                  class="rounded-circle"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <input
+                type="file"
+                class="form-control"
+                id="profile-pic"
+                onchange="previewImage(event)"
+              />
             </div>
 
-             <!-- Center: User Information Form -->
-             <div class="col-md-6">
-                <div id="user-info-form" class="bg-secondary p-4 rounded">
-                    <h4 class="mb-4 text-start">Enter Your Information</h4> <!-- Smaller title, aligned to the left -->
-                    <form id="user-form">
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="title" class="form-label">Professional Title</label>
-                                <input type="text" class="form-control" id="title" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="education" class="form-label">Education</label>
-                                <input type="text" class="form-control" id="education" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="about" class="form-label">About Me</label>
-                            <textarea class="form-control" id="about" rows="4"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="experience" class="form-label">Professional Experience</label>
-                            <textarea class="form-control" id="experience" rows="4"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="skills" class="form-label">Skills</label>
-                            <textarea class="form-control" id="skills" rows="3"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="profile-pic" class="form-label">Profile Picture</label>
-                            <input type="file" class="form-control" id="profile-pic">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Generate Portfolio</button>
-                    </form>
+            <!-- Input Information Box -->
+            <div class="input-information-box bg-dark p-3 rounded mb-4">
+              <form id="user-form">
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      required
+                      oninput="updatePreview()"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="title" class="form-label"
+                      >Professional Title</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      required
+                      oninput="updatePreview()"
+                    />
+                  </div>
                 </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                      oninput="updatePreview()"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="education" class="form-label">Education</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="education"
+                      required
+                      oninput="updatePreview()"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="about" class="form-label">About Me</label>
+                  <textarea
+                    class="form-control"
+                    id="about"
+                    rows="4"
+                    oninput="updatePreview()"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="experience" class="form-label"
+                    >Professional Experience</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="experience"
+                    rows="3"
+                    oninput="updatePreview()"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="skills" class="form-label">Skills</label>
+                  <textarea
+                    class="form-control"
+                    id="skills"
+                    rows="3"
+                    oninput="updatePreview()"
+                  ></textarea>
+                </div>
+              </form>
             </div>
+
+            <!-- Projects Box -->
+            <div class="projects-box bg-dark p-3 rounded">
+              <h5>Projects</h5>
+              <div id="projects-container" class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4">
+                  <div class="project-box p-3 bg-secondary rounded">
+                    <div class="mb-3">
+                      <label for="project-name-1" class="form-label"
+                        >Project Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="project-name-1"
+                        required
+                        oninput="updateProjectPreview(1)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-description-1" class="form-label"
+                        >Project Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="project-description-1"
+                        rows="3"
+                        required
+                        oninput="updateProjectPreview(1)"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="github-link-1" class="form-label"
+                        >GitHub Link</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control"
+                        id="github-link-1"
+                        required
+                        oninput="updateProjectPreview(1)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-image-1" class="form-label"
+                        >Project Image</label
+                      >
+                      <div class="project-image-preview mb-2">
+                        <img
+                          id="project-image-preview-1"
+                          alt="Project Preview"
+                          src="/Portfolio_Templates/uploads/default-placeholder.png"
+                          class="rounded"
+                          width="120"
+                          height="120"
+                        />
+                      </div>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="project-image-1"
+                        onchange="previewProjectImage(event, 1)"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4">
+                  <div class="project-box p-3 bg-secondary rounded">
+                    <div class="mb-3">
+                      <label for="project-name-2" class="form-label"
+                        >Project Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="project-name-2"
+                        required
+                        oninput="updateProjectPreview(2)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-description-2" class="form-label"
+                        >Project Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="project-description-2"
+                        rows="3"
+                        required
+                        oninput="updateProjectPreview(2)"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="github-link-2" class="form-label"
+                        >GitHub Link</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control"
+                        id="github-link-2"
+                        required
+                        oninput="updateProjectPreview(2)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-image-2" class="form-label"
+                        >Project Image</label
+                      >
+                      <div class="project-image-preview mb-2">
+                        <img
+                          id="project-image-preview-2"
+                          alt="Project Preview"
+                          src="/Portfolio_Templates/uploads/default-placeholder.png"
+                          class="rounded"
+                          width="120"
+                          height="120"
+                        />
+                      </div>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="project-image-2"
+                        onchange="previewProjectImage(event, 2)"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4">
+                  <div class="project-box p-3 bg-secondary rounded">
+                    <div class="mb-3">
+                      <label for="project-name-3" class="form-label"
+                        >Project Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="project-name-3"
+                        required
+                        oninput="updateProjectPreview(3)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-description-3" class="form-label"
+                        >Project Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="project-description-3"
+                        rows="3"
+                        required
+                        oninput="updateProjectPreview(3)"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="github-link-3" class="form-label"
+                        >GitHub Link</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control"
+                        id="github-link-3"
+                        required
+                        oninput="updateProjectPreview(3)"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="project-image-3" class="form-label"
+                        >Project Image</label
+                      >
+                      <div class="project-image-preview mb-2">
+                        <img
+                          id="project-image-preview-3"
+                          alt="Project Preview"
+                          src="/Portfolio_Templates/uploads/default-placeholder.png"
+                          class="rounded"
+                          width="120"
+                          height="120"
+                        />
+                      </div>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="project-image-3"
+                        onchange="previewProjectImage(event, 3)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-dark-green mt-3"
+                onclick="addProject()"
+              >
+                Add Project
+              </button>
+            </div>
+
+            <button type="submit" class="btn btn-dark-green mt-4">
+              Generate Portfolio
+            </button>
+          </div>
+        </div>
 
 <!-- Dynamic Preview -->
 <div class="col-md-5">
