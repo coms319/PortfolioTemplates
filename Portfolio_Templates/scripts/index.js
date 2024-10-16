@@ -121,12 +121,78 @@ document.getElementById("skills").addEventListener("input", function () {
   document.getElementById("preview-skills").innerText = this.value;
 });
 
-// Handle form submission and dynamic preview update
-document
-  .getElementById("user-info-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+// Function to populate form data from sessionStorage
+function populateFormData() {
+  const storedData = sessionStorage.getItem("portfolioData");
+  if (storedData) {
+    const formData = JSON.parse(storedData);
 
-    // Just to simulate submission for now
-    console.log("Form submitted successfully.");
+    // Populate profile picture
+    if (formData.profilePicture) {
+      document.getElementById("profile-picture-preview").src = formData.profilePicture;
+    }
+    console.log(formData);
+    // Populate basic fields
+    document.getElementById("name").value = formData.name || "";
+    document.getElementById("title").value = formData.title || "";
+    document.getElementById("email").value = formData.email || "";
+    document.getElementById("education").value = formData.education || "";
+    document.getElementById("about").value = formData.about || "";
+    document.getElementById("experience").value = formData.experience || "";
+    document.getElementById("skills").value = formData.skills || "";
+
+    // Populate project data
+    const projectBoxes = document.querySelectorAll("#projects-container .project-box");
+    formData.projects.forEach((project, index) => {
+      const box = projectBoxes[index];
+      if (box) {
+        box.querySelector(".project-name").value = project.name || "";
+        box.querySelector(".project-description").value = project.description || "";
+        box.querySelector(".github-link").value = project.githubLink || "";
+        if (project.image) {
+          box.querySelector(".project-image-preview img").src = project.image;
+        }
+      }
+    });
+  }
+}
+
+// Call populateFormData when the page first loads
+populateFormData();
+
+// Handle form submission and dynamic preview update
+document.getElementById("generate-portfolio").addEventListener("click", function (event) {
+  const formData = getFormData();
+  const formDataJson = JSON.stringify(formData);
+
+  console.log(formDataJson);
+
+  sessionStorage.setItem("portfolioData", formDataJson);
+  console.log("Form data saved to sessionStorage:", formDataJson);
+});
+
+// Function to generate the form data into a JSON object
+function getFormData() {
+  // Iterate over each project box and extract its data
+  const projects = [];
+  document.querySelectorAll("#projects-container .project-box").forEach((box, index) => {
+    projects.push({
+      name: box.querySelector(".project-name").value,
+      description: box.querySelector(".project-description").value,
+      githubLink: box.querySelector(".github-link").value,
+      image: box.querySelector(".project-image-preview img").src,
+    });
   });
+
+  return {
+    profilePicture: document.getElementById("profile-picture-preview").src,
+    name: document.getElementById("name").value,
+    title: document.getElementById("title").value,
+    email: document.getElementById("email").value,
+    education: document.getElementById("education").value,
+    about: document.getElementById("about").value,
+    experience: document.getElementById("experience").value,
+    skills: document.getElementById("skills").value,
+    projects: projects,
+  };
+}
