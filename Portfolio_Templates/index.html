@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body class="bg-dark text-light">
     <!-- Top Navigation Bar -->
@@ -213,7 +214,7 @@
                       >
                       <input
                         type="text"
-                        class="form-control"
+                        class="project-name form-control"
                         id="project-name-1"
                         required
                         oninput="updateProjectPreview(1)"
@@ -224,7 +225,7 @@
                         >Project Description</label
                       >
                       <textarea
-                        class="form-control"
+                        class="project-description form-control"
                         id="project-description-1"
                         rows="3"
                         required
@@ -237,7 +238,7 @@
                       >
                       <input
                         type="url"
-                        class="form-control"
+                        class="github-link form-control"
                         id="github-link-1"
                         required
                         oninput="updateProjectPreview(1)"
@@ -252,7 +253,7 @@
                           id="project-image-preview-1"
                           alt="Project Preview"
                           src="/Portfolio_Templates/uploads/default-placeholder.png"
-                          class="rounded"
+                          class="project-image-preview rounded"
                           width="120"
                           height="120"
                         />
@@ -276,7 +277,7 @@
                       >
                       <input
                         type="text"
-                        class="form-control"
+                        class="project-name form-control"
                         id="project-name-2"
                         required
                         oninput="updateProjectPreview(2)"
@@ -287,7 +288,7 @@
                         >Project Description</label
                       >
                       <textarea
-                        class="form-control"
+                        class="project-description form-control"
                         id="project-description-2"
                         rows="3"
                         required
@@ -300,7 +301,7 @@
                       >
                       <input
                         type="url"
-                        class="form-control"
+                        class="github-link form-control"
                         id="github-link-2"
                         required
                         oninput="updateProjectPreview(2)"
@@ -315,7 +316,7 @@
                           id="project-image-preview-2"
                           alt="Project Preview"
                           src="/Portfolio_Templates/uploads/default-placeholder.png"
-                          class="rounded"
+                          class="project-image-preview rounded"
                           width="120"
                           height="120"
                         />
@@ -339,7 +340,7 @@
                       >
                       <input
                         type="text"
-                        class="form-control"
+                        class="project-name form-control"
                         id="project-name-3"
                         required
                         oninput="updateProjectPreview(3)"
@@ -350,7 +351,7 @@
                         >Project Description</label
                       >
                       <textarea
-                        class="form-control"
+                        class="project-description form-control"
                         id="project-description-3"
                         rows="3"
                         required
@@ -363,7 +364,7 @@
                       >
                       <input
                         type="url"
-                        class="form-control"
+                        class="github-link form-control"
                         id="github-link-3"
                         required
                         oninput="updateProjectPreview(3)"
@@ -378,7 +379,7 @@
                           id="project-image-preview-3"
                           alt="Project Preview"
                           src="/Portfolio_Templates/uploads/default-placeholder.png"
-                          class="rounded"
+                          class="project-image-preview rounded"
                           width="120"
                           height="120"
                         />
@@ -402,7 +403,7 @@
               </button>
             </div>
 
-            <button type="submit" class="btn btn-dark-green mt-4">
+            <button id="generate-portfolio" type="submit" class="btn btn-dark-green mt-4">
               Generate Portfolio
             </button>
           </div>
