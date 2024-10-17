@@ -1,4 +1,5 @@
 let projectCount = 3; // Initially 3 projects
+let selectedKey = 1; // Variable to store the selected key
 
 // Update profile picture preview
 document.getElementById("profile-pic").addEventListener("change", function () {
@@ -197,7 +198,17 @@ function getFormData() {
     };
 }
 
-document.getElementById('downloadBtn').addEventListener('click', async function () {
+// Add event listeners to all dropdown items
+document.querySelectorAll('.template-download-item').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('dropdownMenuButton').textContent = this.textContent;
+        selectedKey = this.getAttribute('data-key');
+    });
+});
+
+document.getElementById('downloadTemplate').addEventListener('click', async function () {
+
     try {
         // Step 1: Create a new JSZip instance
         var zip = new JSZip();
@@ -211,7 +222,7 @@ document.getElementById('downloadBtn').addEventListener('click', async function 
 
         // Step 3: Fetch all files concurrently using Promise.all
         const filePromises = files.map(async (file) => {
-            const response = await fetch(`templates/template1/${file}`);
+            const response = await fetch(`templates/template${selectedKey}/${file}`);
             const content = await response.text();
             zip.file(file, content);
         });
