@@ -196,3 +196,37 @@ function getFormData() {
     projects: projects,
   };
 }
+
+// Function to download the template
+document.getElementById('downloadBtn').addEventListener('click', async function () {
+  // Step 1: Create a new JSZip instance
+  var zip = new JSZip();
+
+  // Step 2: Fetch all files concurrently using Promise.all
+  const files = [
+    "index.html",
+    "styles.css",
+    "index.js",
+  ];
+  const filePromises = files.map(async (file) => {
+    const response = await fetch(`templates/template1/${file}`);
+    const content = await response.text();
+    zip.file(file, content);
+  });
+  await Promise.all(filePromises);
+
+  // Step 3: Get data from localStorage and create data.json
+  var portfolioData = localStorage.getItem('portfolioData');
+  var dataJson = portfolioData ? portfolioData : '{}';
+  zip.file('data.json', dataJson);
+
+  // Step 4: Generate the zip file and trigger download
+  zip.generateAsync({type: 'blob'}).then(function (blob) {
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'templates.zip';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+});
