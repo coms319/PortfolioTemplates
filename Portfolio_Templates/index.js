@@ -129,7 +129,7 @@ function populateFormData() {
 
     // Populate profile picture
     if (formData.profilePicture) {
-      document.getElementById("profile-pic").src = formData.profilePicture;
+      document.getElementById("profile-picture-preview").src = formData.profilePicture;
     }
     console.log(formData);
     // Populate basic fields
