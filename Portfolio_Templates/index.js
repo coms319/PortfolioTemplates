@@ -51,7 +51,7 @@ function addProject() {
                 <div class="mb-3">
                     <label for="project-image-${projectCount}" class="form-label">Project Image</label>
                     <div class="project-image-preview mb-2">
-                        <img id="project-image-preview-${projectCount}" src="/Portfolio_Templates/uploads/default-placeholder.png" alt="Project Preview" class="rounded" width="120" height="120">
+                        <img id="project-image-preview-${projectCount}" src="/Portfolio_Templates/myotherimages/default-placeholder.png" alt="Project Preview" class="rounded" width="120" height="120">
                     </div>
                     <input type="file" class="form-control" id="project-image-${projectCount}" onchange="previewProjectImage(event, ${projectCount})">
                 </div>
@@ -71,7 +71,7 @@ function addProject() {
             <h6 id="preview-project-name-${projectCount}">Project Name</h6>
             <p id="preview-project-description-${projectCount}">Project Description</p>
             <a id="preview-github-link-${projectCount}" href="#" target="_blank">GitHub Link</a>
-            <img id="preview-project-image-${projectCount}" src="/Portfolio_Templates/uploads/default-placeholder.png" alt="Project Image" class="rounded" width="100" height="100">
+            <img id="preview-project-image-${projectCount}" src="/Portfolio_Templates/myotherimages/default-placeholder.png" alt="Project Image" class="rounded" width="100" height="100">
         </div>
     `;
   projectPreviewContainer.insertAdjacentHTML(
@@ -129,7 +129,7 @@ function populateFormData() {
 
     // Populate profile picture
     if (formData.profilePicture) {
-      document.getElementById("profile-picture-preview").src = formData.profilePicture;
+      document.getElementById("profile-pic").src = formData.profilePicture;
     }
     console.log(formData);
     // Populate basic fields

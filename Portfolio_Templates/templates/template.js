@@ -1,11 +1,8 @@
 // Function to populate form data from sessionStorage
 function populateData(data) {
 
-    // Populate profile picture
-    if (data.profilePicture) {
-        document.getElementById("profile-pic").src = data.profilePicture;
-    }
     // Populate basic fields
+    document.getElementById("profile-pic").src = data.profilePicture;
     document.getElementById("page-title").innerHTML = data.title + " - " + data.name;
     document.getElementById("name").innerHTML = data.name;
     document.getElementById("title").innerHTML = data.title;
