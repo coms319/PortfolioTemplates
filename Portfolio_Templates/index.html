@@ -121,9 +121,8 @@
               </div>
               <input
                 type="file"
-                class="form-control"
+                class="form-control portfolioInput"
                 id="profile-pic"
-                onchange="previewImage(event)"
               />
             </div>
 
@@ -135,10 +134,9 @@
                     <label for="name" class="form-label">Full Name</label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control portfolioInput"
                       id="name"
                       required
-                      oninput="updatePreview()"
                     />
                   </div>
                   <div class="col-md-6">
@@ -147,10 +145,9 @@
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control portfolioInput"
                       id="title"
                       required
-                      oninput="updatePreview()"
                     />
                   </div>
                 </div>
@@ -159,30 +156,27 @@
                     <label for="email" class="form-label">Email</label>
                     <input
                       type="email"
-                      class="form-control"
+                      class="form-control portfolioInput"
                       id="email"
                       required
-                      oninput="updatePreview()"
                     />
                   </div>
                   <div class="col-md-6">
                     <label for="education" class="form-label">Education</label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control portfolioInput"
                       id="education"
                       required
-                      oninput="updatePreview()"
                     />
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="about" class="form-label">About Me</label>
                   <textarea
-                    class="form-control"
+                    class="form-control portfolioInput"
                     id="about"
                     rows="4"
-                    oninput="updatePreview()"
                   ></textarea>
                 </div>
                 <div class="mb-3">
@@ -190,19 +184,17 @@
                     >Professional Experience</label
                   >
                   <textarea
-                    class="form-control"
+                    class="form-control portfolioInput"
                     id="experience"
                     rows="3"
-                    oninput="updatePreview()"
                   ></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="skills" class="form-label">Skills</label>
                   <textarea
-                    class="form-control"
+                    class="form-control portfolioInput"
                     id="skills"
                     rows="3"
-                    oninput="updatePreview()"
                   ></textarea>
                 </div>
               </form>
@@ -211,196 +203,7 @@
             <!-- Projects Box -->
             <div class="projects-box bg-dark p-3 rounded">
               <h5>Projects</h5>
-              <div id="projects-container" class="row">
-                <!-- Project 1 -->
-                <div class="col-md-4 mb-4">
-                  <div class="project-box p-3 bg-secondary rounded">
-                    <div class="mb-3">
-                      <label for="project-name-1" class="form-label"
-                        >Project Name</label
-                      >
-                      <input
-                        type="text"
-                        class="project-name form-control"
-                        id="project-name-1"
-                        required
-                        oninput="updateProjectPreview(1)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-description-1" class="form-label"
-                        >Project Description</label
-                      >
-                      <textarea
-                        class="project-description form-control"
-                        id="project-description-1"
-                        rows="3"
-                        required
-                        oninput="updateProjectPreview(1)"
-                      ></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="github-link-1" class="form-label"
-                        >GitHub Link</label
-                      >
-                      <input
-                        type="url"
-                        class="github-link form-control"
-                        id="github-link-1"
-                        required
-                        oninput="updateProjectPreview(1)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-image-1" class="form-label"
-                        >Project Image</label
-                      >
-                      <div class="project-image-preview mb-2">
-                        <img
-                          id="project-image-preview-1"
-                          alt="Project Preview"
-                          src="/Portfolio_Templates/myotherimages/default-placeholder.png"
-                          class="rounded"
-                          width="120"
-                          height="120"
-                        />
-                      </div>
-                      <input
-                        type="file"
-                        class="form-control"
-                        id="project-image-1"
-                        onchange="previewProjectImage(event, 1)"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="col-md-4 mb-4">
-                  <div class="project-box p-3 bg-secondary rounded">
-                    <div class="mb-3">
-                      <label for="project-name-2" class="form-label"
-                        >Project Name</label
-                      >
-                      <input
-                        type="text"
-                        class="project-name form-control"
-                        id="project-name-2"
-                        required
-                        oninput="updateProjectPreview(2)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-description-2" class="form-label"
-                        >Project Description</label
-                      >
-                      <textarea
-                        class="project-description form-control"
-                        id="project-description-2"
-                        rows="3"
-                        required
-                        oninput="updateProjectPreview(2)"
-                      ></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="github-link-2" class="form-label"
-                        >GitHub Link</label
-                      >
-                      <input
-                        type="url"
-                        class="github-link form-control"
-                        id="github-link-2"
-                        required
-                        oninput="updateProjectPreview(2)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-image-2" class="form-label"
-                        >Project Image</label
-                      >
-                      <div class="project-image-preview mb-2">
-                        <img
-                          id="project-image-preview-2"
-                          alt="Project Preview"
-                          src="/Portfolio_Templates/myotherimages/project-placeholder-image.jpg"
-                          class="rounded"
-                          width="120"
-                          height="120"
-                        />
-                      </div>
-                      <input
-                        type="file"
-                        class="form-control"
-                        id="project-image-2"
-                        onchange="previewProjectImage(event, 2)"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="col-md-4 mb-4">
-                  <div class="project-box p-3 bg-secondary rounded">
-                    <div class="mb-3">
-                      <label for="project-name-3" class="form-label"
-                        >Project Name</label
-                      >
-                      <input
-                        type="text"
-                        class="project-name form-control"
-                        id="project-name-3"
-                        required
-                        oninput="updateProjectPreview(3)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-description-3" class="form-label"
-                        >Project Description</label
-                      >
-                      <textarea
-                        class="project-description form-control"
-                        id="project-description-3"
-                        rows="3"
-                        required
-                        oninput="updateProjectPreview(3)"
-                      ></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="github-link-3" class="form-label"
-                        >GitHub Link</label
-                      >
-                      <input
-                        type="url"
-                        class="github-link form-control"
-                        id="github-link-3"
-                        required
-                        oninput="updateProjectPreview(3)"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="project-image-3" class="form-label"
-                        >Project Image</label
-                      >
-                      <div class="project-image-preview mb-2">
-                        <img
-                          id="project-image-preview-3"
-                          alt="Project Preview"
-                          src="/Portfolio_Templates/myotherimages/default-placeholder.png"
-                          class="rounded"
-                          width="120"
-                          height="120"
-                        />
-                      </div>
-                      <input
-                        type="file"
-                        class="form-control"
-                        id="project-image-3"
-                        onchange="previewProjectImage(event, 3)"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="projects-container" class="row"></div>
               <button
                 type="button"
                 class="btn btn-dark-green mt-3"
@@ -409,92 +212,24 @@
                 Add Project
               </button>
             </div>
-
-            <button id="generate-portfolio" type="submit" class="btn btn-dark-green mt-4">
-              Generate Portfolio
-            </button>
           </div>
         </div>
 
         <!-- Dynamic Preview -->
         <div class="col-md-5">
-            <div id="template-preview-content" class="bg-secondary p-4 rounded">
-                <div class="text-center">
-                    <img
-                        id="preview-profile-picture"
-                        src="/Portfolio_Templates/myotherimages/default-placeholder.png"
-                        alt="Profile Picture"
-                        class="rounded-circle"
-                        width="100"
-                    />
-                    <h3 id="preview-name">Full Name</h3>
-                    <p id="preview-title">Professional Title</p>
-                    <p id="preview-about">About Me</p>
-                    <p id="preview-education">Education</p>
-                    <p><a id="preview-email" href="mailto:">Email</a></p>
-                    <p id="preview-experience">Professional Experience</p>
-                    <p id="preview-skills">Skills</p>
-                </div>
-
-                <div class="projects-section bg-dark p-4 rounded mt-4">
-                    <h5>Projects Preview</h5>
-                    <div id="project-preview-container" class="row">
-                        <!-- Project 1 Preview -->
-                        <div class="col-md-4" id="project-preview-1">
-                            <h6 id="preview-project-name-1">Project Name</h6>
-                            <p id="preview-project-description-1">Project Description</p>
-                            <a id="preview-github-link-1" href="#" target="_blank">GitHub Link</a>
-                            <img
-                                id="preview-project-image-1"
-                                src="/Portfolio_Templates/myotherimages/project-placeholder-image.jpg"
-                                alt="Project Image"
-                                class="rounded"
-                                width="100"
-                                height="100"
-                            />
-                        </div>
-                        <!-- Project 2 Preview -->
-                        <div class="col-md-4" id="project-preview-2">
-                            <h6 id="preview-project-name-2">Project Name</h6>
-                            <p id="preview-project-description-2">Project Description</p>
-                            <a id="preview-github-link-2" href="#" target="_blank">GitHub Link</a>
-                            <img
-                                id="preview-project-image-2"
-                                src="/Portfolio_Templates/myotherimages/project-placeholder-image.jpg"
-                                alt="Project Image"
-                                class="rounded"
-                                width="100"
-                                height="100"
-                            />
-                        </div>
-                        <!-- Project 3 Preview -->
-                        <div class="col-md-4" id="project-preview-3">
-                            <h6 id="preview-project-name-3">Project Name</h6>
-                            <p id="preview-project-description-3">Project Description</p>
-                            <a id="preview-github-link-3" href="#" target="_blank">GitHub Link</a>
-                            <img
-                                id="preview-project-image-3"
-                                src="/Portfolio_Templates/myotherimages/project-placeholder-image.jpg"
-                                alt="Project Image"
-                                class="rounded"
-                                width="100"
-                                height="100"
-                            />
-                        </div>
-                      <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                          Template 1
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item template-download-item" href="#" data-key="1">Template 1</a></li>
-                          <li><a class="dropdown-item template-download-item" href="#" data-key="2">Template 2</a></li>
-                        </ul>
-                      </div>
-                      <button id="downloadTemplate">Download Template</button>
-                    </div>
-                </div>
-            </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Template 1
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item template-download-item" href="#" data-key="1">Template 1</a></li>
+              <li><a class="dropdown-item template-download-item" href="#" data-key="2">Template 2</a></li>
+            </ul>
+          </div>
+          <button id="downloadTemplate">Download Template</button>
+          <iframe id="templateFrame" src="templates/template1/index.html" width="200%" style="transform: scale(0.5); transform-origin: top left; height: 160vh; background-color: white"></iframe>
         </div>
+
       </div>
     </div>
     <script src="./index.js"></script>
