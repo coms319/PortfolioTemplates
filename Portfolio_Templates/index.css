@@ -150,7 +150,7 @@ a:hover {
   color: #58a59c;
 }
 
-/* Center modal content */
+/* Welcome message */
 .modal-content {
   background-color: #343a40;
   color: #ffffff;
@@ -163,7 +163,6 @@ a:hover {
   text-align: center;
 }
 
-/* Modal header */
 .modal-header {
   border-bottom: none;
   justify-content: center;
@@ -195,10 +194,59 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: #05653b;
+  border-color: #343a40;
 }
 
 .btn-primary:hover {
-  background-color: #218838;
+  background-color: #038030;
+}
+
+/* Dropdown and Template Section */
+.dropdown {
+  width: 100%;
+}
+
+.dropdown-toggle {
+  background-color: #05653b;
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.dropdown-toggle:hover {
+  background-color: #038030;
+  color: white;
+}
+
+.dropdown-menu {
+  width: 100%;
+}
+
+.template-preview-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 70vh;
+  margin-bottom: 10px;
+}
+
+#downloadTemplate {
+  background-color: #05653b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  align-self: center;
+}
+
+#downloadTemplate:hover {
+  background-color: #038030;
+  border-color: #1e7e34;
 }

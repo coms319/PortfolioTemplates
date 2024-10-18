@@ -14,14 +14,15 @@ document.getElementById("profile-pic").addEventListener("change", function () {
     }
 });
 
-// Add a new project
 function addProject() {
     projectCount += 1;
     const projectsContainer = document.getElementById("projects-container");
 
     const newProjectHTML = `
-        <div class="col-md-4 mb-4">
-            <div class="project-box p-3 bg-secondary rounded">
+        <div class="col-md-4 mb-4" id="project-box-${projectCount}">
+            <div class="project-box p-3 bg-secondary rounded position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onclick="deleteProject(${projectCount})"></button>
+
                 <div class="mb-3">
                     <label for="project-name-${projectCount}" class="form-label">Project Name</label>
                     <input type="text" class="form-control portfolioInput project-name" id="project-name-${projectCount}" required oninput="updateProjectPreview(${projectCount})">
@@ -47,6 +48,12 @@ function addProject() {
 
     // Add the new project fields to the form
     projectsContainer.insertAdjacentHTML("beforeend", newProjectHTML);
+}
+
+// Function to delete a project
+function deleteProject(projectId) {
+    const projectBox = document.getElementById(`project-box-${projectId}`);
+    projectBox.remove();
 }
 
 // Add listeners to dynamically update user information preview

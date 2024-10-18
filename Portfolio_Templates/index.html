@@ -173,21 +173,37 @@
 
         <!-- Dynamic Preview -->
         <div class="col-md-5">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="dropdown w-100">
+            <button
+                    class="btn btn-dark-green w-100 dropdown-toggle"
+                    type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+            >
               Template 1
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item template-download-item" href="#" data-key="1">Template 1</a></li>
               <li><a class="dropdown-item template-download-item" href="#" data-key="2">Template 2</a></li>
             </ul>
           </div>
-          <button id="downloadTemplate">Download Template</button>
-          <iframe id="templateFrame" src="templates/template1/index.html" width="200%" style="transform: scale(0.5); transform-origin: top left; height: 160vh; background-color: white"></iframe>
-        </div>
 
-      </div>
-    </div>
+
+          <iframe
+                  id="templateFrame"
+                  src="templates/template1/index.html"
+                  style="transform: scale(1); transform-origin: top left; height: 160vh; background-color: white"
+          ></iframe>
+
+          <div class="d-flex justify-content-center">
+
+            <button
+                    id="downloadTemplate"
+                    class="btn btn-dark-green mt-3 w-50"
+            >Download Template
+            </button>
+          </div>
+        </div>
 
     <!-- Welcome Modal -->
     <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
@@ -195,7 +211,6 @@
         <div class="modal-content text-center bg-dark text-light">
           <div class="modal-header">
             <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <p id="welcomeMessageText"></p>
