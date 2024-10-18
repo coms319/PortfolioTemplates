@@ -56,9 +56,9 @@ document.querySelectorAll(".portfolioInput").forEach((element) => {
     });
 })
 
-// Function to populate form data from sessionStorage
+// Function to populate form data from localStorage
 function populateFormData() {
-    const storedData = sessionStorage.getItem("portfolioData");
+    const storedData = localStorage.getItem("portfolioData");
     if (storedData) {
         const formData = JSON.parse(storedData);
 
@@ -129,51 +129,50 @@ document.querySelectorAll('.template-download-item').forEach(item => {
 function refreshIframe() {
     const formData = getFormData();
     const formDataJson = JSON.stringify(formData);
-    sessionStorage.setItem("portfolioData", formDataJson);
+    localStorage.setItem("portfolioData", formDataJson);
     var iframe = document.getElementById('templateFrame');
     iframe.src = iframe.src; // This reloads the iframe
 }
-//
-// // Function to handle download
-// document.getElementById('downloadTemplate').addEventListener('click', async function () {
-//     try {
-//         // Step 1: Create a new JSZip instance
-//         var zip = new JSZip();
-//
-//         // Step 2: Define the files to add
-//         const files = [
-//             "index.html",
-//             "styles.css",
-//             "index.js"
-//         ];
-//
-//         // Step 3: Fetch all files concurrently using Promise.all
-//         const filePromises = files.map(async (file) => {
-//             const response = await fetch(`templates/template${selectedKey}/${file}`);
-//             const content = await response.text();
-//             zip.file(file, content);
-//         });
-//
-//         // Wait for all files to be fetched and added to the ZIP
-//         await Promise.all(filePromises);
-//
-//         // Step 4: Get data from localStorage and create data.json
-//         var portfolioData = localStorage.getItem('portfolioData') || '{}';
-//         zip.file('data.json', portfolioData);
-//
-//         // Step 5: Generate the ZIP file and trigger download
-//         zip.generateAsync({ type: 'blob' }).then(function (blob) {
-//             var link = document.createElement('a');
-//             link.href = URL.createObjectURL(blob);
-//             link.download = 'templates.zip';
-//             document.body.appendChild(link);
-//             link.click();
-//             document.body.removeChild(link);
-//         });
-//     } catch (error) {
-//         console.error('Error fetching files:', error);
-//     }
-// });
+
+// Function to handle download
+document.getElementById('downloadTemplate').addEventListener('click', async function () {
+    try {
+        // Step 1: Create a new JSZip instance
+        var zip = new JSZip();
+
+        // Step 2: Define the files to add
+        const files = [
+            "index.html",
+            "styles.css",
+            "index.js"
+        ];
+
+        // Step 3: Fetch all files concurrently using Promise.all
+        const filePromises = files.map(async (file) => {
+            const response = await fetch(`templates/template${selectedKey}/${file}`);
+            const content = await response.text();
+            zip.file(file, content);
+        });
+        await Promise.all(filePromises);
+
+        // Step 4: Get data from localStorage and create data.json
+        const portfolioData = localStorage.getItem('portfolioData') || '{}';
+        zip.file('data.json', portfolioData);
+
+
+        // Step 5: Generate the ZIP file and trigger download
+        zip.generateAsync({ type: 'blob' }).then(function (blob) {
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'templates.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    } catch (error) {
+        console.error('Error fetching files:', error);
+    }
+});
 
 // Populate Form Data when the page first loads
 populateFormData();
