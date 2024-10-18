@@ -55,50 +55,6 @@
     <!-- Main Content Layout -->
     <div class="container-fluid mt-4">
       <div class="row">
-        <!-- Template Preview Images -->
-        <div class="col-md-2">
-          <div class="template-previews-box bg-dark p-3 rounded">
-            <div id="template-previews" class="template-previews-container">
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview1.jpeg"
-                  alt="Template 1"
-                />
-              </div>
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview2.jpeg"
-                  alt="Template 2"
-                />
-              </div>
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview3.jpeg"
-                  alt="Template 3"
-                />
-              </div>
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview4.jpeg"
-                  alt="Template 4"
-                />
-              </div>
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview5.jpeg"
-                  alt="Template 5"
-                />
-              </div>
-              <div class="template-preview-item">
-                <img
-                  src="myotherimages/template-preview6.jpeg"
-                  alt="Template 6"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
         <!-- Enter Your Information Box -->
         <div class="col-md-5 d-flex flex-column">
           <div id="user-info-form-container" class="bg-secondary p-4 rounded">
@@ -232,6 +188,26 @@
 
       </div>
     </div>
+
+    <!-- Welcome Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="welcomeMessageText"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <script src="./index.js"></script>
   </body>
 </html>

@@ -181,3 +181,24 @@ populateFormData();
 addProject();
 addProject();
 addProject();
+
+// Display Welcome Modal Once Per Session
+function showWelcomeModal() {
+    // Check if the welcome modal has been shown already in this session
+    if (!sessionStorage.getItem('welcomeModalShown')) {
+        $.getJSON('data.json', function(data) {
+            const welcomeTexts = data.homePage.texts;
+
+            const welcomeMessage = welcomeTexts.map(text => `<p>${text}</p>`).join("");
+
+            $('#welcomeMessageText').html(welcomeMessage);
+
+            $('#welcomeModal').modal('show');
+
+            sessionStorage.setItem('welcomeModalShown', 'true');
+        });
+    }
+}
+
+// Call the function to show the welcome modal
+showWelcomeModal();

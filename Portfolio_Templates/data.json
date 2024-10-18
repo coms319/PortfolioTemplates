@@ -3,17 +3,8 @@
     "texts": [
       "Welcome to the Portfolio Generator!",
       "Create your personalized portfolio website in just a few easy steps.",
-      "Choose a template, enter your information, and download your website."
-    ],
-    "images": [
-      "images/home-banner.jpg",
-      "images/feature-overview.jpg"
-    ]
-  },
-  "portfolioPage": {
-    "texts": [
-      "Select from a variety of professional templates.",
-      "Preview each template to find the one that best suits your style."
+      "Choose a template, enter your information, and download your website.",
+      "Have fun : )"
     ],
     "images": [
       "myotherimages/template-preview1.jpeg",
