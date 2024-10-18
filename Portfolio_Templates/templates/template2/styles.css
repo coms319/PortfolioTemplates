@@ -1,87 +1,74 @@
-body {
+body,
+html {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  background-color: #282c34;
-}
-
-header {
-  position: relative;
-  height: 60vh;
-  background: url('images/background.jpg') no-repeat center center/cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(40, 44, 52, 0.7);
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 .container {
-  position: relative;
-  z-index: 1;
   width: 80%;
   margin: 0 auto;
 }
 
-header .container {
-  text-align: center;
-  padding-top: 50px;
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #fff;
-}
-
-.name {
-  font-size: 2.5em;
-  margin-top: 20px;
-}
-
-.title {
-  font-size: 1.2em;
-  color: #ffcc67;
-}
-
-main {
-  padding: 50px 0;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #ff6f61;
-}
-
-section p, section ul {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-section ul li {
-  margin-bottom: 10px;
-}
-
-footer {
-  background-color: #20232a;
+header {
+  background-color: #333;
+  color: white;
   padding: 20px 0;
   text-align: center;
 }
 
-footer a {
-  color: #61dafb;
+header img {
+  border-radius: 50%;
+  margin-top: 10px;
+  max-width: 150px;
+}
+
+nav {
+  background-color: #555;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
   text-decoration: none;
-  font-weight: bold;
+  color: white;
+  padding: 10px 15px;
+  background-color: #666;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+}
+
+main section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+footer a {
+  color: #ddd;
+  text-decoration: none;
 }

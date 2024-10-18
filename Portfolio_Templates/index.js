@@ -3,22 +3,22 @@ let selectedKey = 1; // Variable to store the selected key
 
 // Update profile picture preview
 document.getElementById("profile-pic").addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            document.querySelector("#profile-picture-preview").src = e.target.result;
-            refreshIframe();
-        };
-        reader.readAsDataURL(file);
-    }
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector("#profile-picture-preview").src = e.target.result;
+      refreshIframe();
+    };
+    reader.readAsDataURL(file);
+  }
 });
 
 function addProject() {
-    projectCount += 1;
-    const projectsContainer = document.getElementById("projects-container");
+  projectCount += 1;
+  const projectsContainer = document.getElementById("projects-container");
 
-    const newProjectHTML = `
+  const newProjectHTML = `
         <div class="col-md-4 mb-4" id="project-box-${projectCount}">
             <div class="project-box p-3 bg-secondary rounded position-relative">
                 <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onclick="deleteProject(${projectCount})"></button>
@@ -46,140 +46,154 @@ function addProject() {
         </div>
     `;
 
-    // Add the new project fields to the form
-    projectsContainer.insertAdjacentHTML("beforeend", newProjectHTML);
+  // Add the new project fields to the form
+  projectsContainer.insertAdjacentHTML("beforeend", newProjectHTML);
 }
 
 // Function to delete a project
 function deleteProject(projectId) {
-    const projectBox = document.getElementById(`project-box-${projectId}`);
-    projectBox.remove();
+  const projectBox = document.getElementById(`project-box-${projectId}`);
+  projectBox.remove();
 }
 
 // Add listeners to dynamically update user information preview
 document.querySelectorAll(".portfolioInput").forEach((element) => {
-    element.addEventListener("input", function () {
-        refreshIframe();
-    });
-})
+  element.addEventListener("input", function () {
+    refreshIframe();
+  });
+});
 
 // Function to populate form data from localStorage
 function populateFormData() {
-    const storedData = localStorage.getItem("portfolioData");
-    if (storedData) {
-        const formData = JSON.parse(storedData);
+  const storedData = localStorage.getItem("portfolioData");
+  if (storedData) {
+    const formData = JSON.parse(storedData);
 
-        // Populate basic fields
-        document.getElementById("profile-picture-preview").src = formData.profilePicture;
-        document.getElementById("name").value = formData.name || "";
-        document.getElementById("title").value = formData.title || "";
-        document.getElementById("email").value = formData.email || "";
-        document.getElementById("education").value = formData.education || "";
-        document.getElementById("about").value = formData.about || "";
-        document.getElementById("experience").value = formData.experience || "";
-        document.getElementById("skills").value = formData.skills || "";
+    // Populate basic fields
+    document.getElementById("profile-picture-preview").src =
+      formData.profilePicture;
+    document.getElementById("name").value = formData.name || "";
+    document.getElementById("title").value = formData.title || "";
+    document.getElementById("email").value = formData.email || "";
+    document.getElementById("education").value = formData.education || "";
+    document.getElementById("about").value = formData.about || "";
+    document.getElementById("experience").value = formData.experience || "";
+    document.getElementById("skills").value = formData.skills || "";
 
-        // Populate project data
-        const projectBoxes = document.querySelectorAll("#projects-container .project-box");
-        if (formData.projects) {
-            formData.projects.forEach((project, index) => {
-                const box = projectBoxes[index];
-                if (box) {
-                    box.querySelector(".project-name").value = project.name || "";
-                    box.querySelector(".project-description").value = project.description || "";
-                    box.querySelector(".github-link").value = project.githubLink || "";
-                    if (project.image) {
-                        box.querySelector(".project-image-preview img").src = project.image;
-                    }
-                }
-            });
+    // Populate project data
+    const projectBoxes = document.querySelectorAll(
+      "#projects-container .project-box"
+    );
+    if (formData.projects) {
+      formData.projects.forEach((project, index) => {
+        const box = projectBoxes[index];
+        if (box) {
+          box.querySelector(".project-name").value = project.name || "";
+          box.querySelector(".project-description").value =
+            project.description || "";
+          box.querySelector(".github-link").value = project.githubLink || "";
+          if (project.image) {
+            box.querySelector(".project-image-preview img").src = project.image;
+          }
         }
+      });
     }
+  }
 }
 
 // Function to generate the form data into a JSON object
 function getFormData() {
-    // Iterate over each project box and extract its data
-    const projects = [];
-    document.querySelectorAll("#projects-container .project-box").forEach((box, index) => {
-        projects.push({
-            name: box.querySelector(".project-name").value,
-            description: box.querySelector(".project-description").value,
-            githubLink: box.querySelector(".github-link").value,
-            image: box.querySelector(".project-image-preview img").src,
-        });
+  // Iterate over each project box and extract its data
+  const projects = [];
+  document
+    .querySelectorAll("#projects-container .project-box")
+    .forEach((box, index) => {
+      projects.push({
+        name: box.querySelector(".project-name").value,
+        description: box.querySelector(".project-description").value,
+        githubLink: box.querySelector(".github-link").value,
+        image: box.querySelector(".project-image-preview img").src,
+      });
     });
 
-    return {
-        profilePicture: document.getElementById("profile-picture-preview").src,
-        name: document.getElementById("name").value,
-        title: document.getElementById("title").value,
-        email: document.getElementById("email").value,
-        education: document.getElementById("education").value,
-        about: document.getElementById("about").value,
-        experience: document.getElementById("experience").value,
-        skills: document.getElementById("skills").value,
-        projects: projects,
-    };
+  return {
+    profilePicture: document.getElementById("profile-picture-preview").src,
+    name: document.getElementById("name").value,
+    title: document.getElementById("title").value,
+    email: document.getElementById("email").value,
+    education: document.getElementById("education").value,
+    about: document.getElementById("about").value,
+    experience: document.getElementById("experience").value,
+    skills: document.getElementById("skills").value,
+    projects: projects,
+  };
 }
 
 // Event listener to choose template preview
-document.querySelectorAll('.template-download-item').forEach(item => {
-    item.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('dropdownMenuButton').textContent = this.textContent;
-        selectedKey = this.getAttribute('data-key');
-    });
+document.querySelectorAll(".template-download-item").forEach((item) => {
+  item.addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("dropdownMenuButton").textContent =
+      this.textContent;
+    selectedKey = this.getAttribute("data-key");
+
+    // Update the iframe source based on the selected template
+    var iframe = document.getElementById("templateFrame");
+    iframe.src = `templates/template${selectedKey}/index.html`;
+  });
 });
 
 // Function to refresh Iframe when form changes
 function refreshIframe() {
-    const formData = getFormData();
-    const formDataJson = JSON.stringify(formData);
-    localStorage.setItem("portfolioData", formDataJson);
-    var iframe = document.getElementById('templateFrame');
-    iframe.src = iframe.src; // This reloads the iframe
+  const formData = getFormData();
+  const formDataJson = JSON.stringify(formData);
+  localStorage.setItem("portfolioData", formDataJson);
+
+  var iframe = document.getElementById("templateFrame");
+
+  iframe.contentWindow.postMessage(formDataJson, "*");
+
+  iframe.src = `templates/template${selectedKey}/index.html`; // Refreshes the iframe to the correct template
 }
 
 // Function to handle download
-document.getElementById('downloadTemplate').addEventListener('click', async function () {
+document
+  .getElementById("downloadTemplate")
+  .addEventListener("click", async function () {
     try {
-        // Step 1: Create a new JSZip instance
-        var zip = new JSZip();
+      // Step 1: Create a new JSZip instance
+      var zip = new JSZip();
 
-        // Step 2: Define the files to add
-        const files = [
-            "index.html",
-            "styles.css",
-            "index.js"
-        ];
+      // Step 2: Define the files to add
+      const files = ["index.html", "styles.css", "index.js"];
 
-        // Step 3: Fetch all files concurrently using Promise.all
-        const filePromises = files.map(async (file) => {
-            const response = await fetch(`templates/template${selectedKey}/${file}`);
-            const content = await response.text();
-            zip.file(file, content);
-        });
-        await Promise.all(filePromises);
+      // Step 3: Fetch all files concurrently using Promise.all
+      const filePromises = files.map(async (file) => {
+        const response = await fetch(
+          `templates/template${selectedKey}/${file}`
+        );
+        const content = await response.text();
+        zip.file(file, content);
+      });
+      await Promise.all(filePromises);
 
-        // Step 4: Get data from localStorage and create data.json
-        const portfolioData = localStorage.getItem('portfolioData') || '{}';
-        zip.file('data.json', portfolioData);
+      // Step 4: Get data from localStorage and create data.json
+      const portfolioData = localStorage.getItem("portfolioData") || "{}";
+      zip.file("data.json", portfolioData);
 
-
-        // Step 5: Generate the ZIP file and trigger download
-        zip.generateAsync({ type: 'blob' }).then(function (blob) {
-            var link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'templates.zip';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+      // Step 5: Generate the ZIP file and trigger download
+      zip.generateAsync({ type: "blob" }).then(function (blob) {
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "templates.zip";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
     } catch (error) {
-        console.error('Error fetching files:', error);
+      console.error("Error fetching files:", error);
     }
-});
+  });
 
 // Populate Form Data when the page first loads
 populateFormData();
@@ -191,20 +205,22 @@ addProject();
 
 // Display Welcome Modal Once Per Session
 function showWelcomeModal() {
-    // Check if the welcome modal has been shown already in this session
-    if (!sessionStorage.getItem('welcomeModalShown')) {
-        $.getJSON('data.json', function(data) {
-            const welcomeTexts = data.homePage.texts;
+  // Check if the welcome modal has been shown already in this session
+  if (!sessionStorage.getItem("welcomeModalShown")) {
+    $.getJSON("data.json", function (data) {
+      const welcomeTexts = data.homePage.texts;
 
-            const welcomeMessage = welcomeTexts.map(text => `<p>${text}</p>`).join("");
+      const welcomeMessage = welcomeTexts
+        .map((text) => `<p>${text}</p>`)
+        .join("");
 
-            $('#welcomeMessageText').html(welcomeMessage);
+      $("#welcomeMessageText").html(welcomeMessage);
 
-            $('#welcomeModal').modal('show');
+      $("#welcomeModal").modal("show");
 
-            sessionStorage.setItem('welcomeModalShown', 'true');
-        });
-    }
+      sessionStorage.setItem("welcomeModalShown", "true");
+    });
+  }
 }
 
 // Call the function to show the welcome modal

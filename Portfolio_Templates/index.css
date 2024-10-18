@@ -16,7 +16,8 @@ nav {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.bg-dark {/* General Page Layout */
+.bg-dark {
+  /* General Page Layout */
   body {
     background-color: #1c1c1c;
     color: #f8f9fa;

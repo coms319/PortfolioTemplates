@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Creative Portfolio</title>
-    <link rel="stylesheet" href="styles/creative-template.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title id="page-title">Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="overlay"></div>
-        <div class="container">
-            <img src="{{profilePic}}" alt="{{name}}" class="profile-pic">
-            <h1 class="name">{{name}}</h1>
-            <p class="title">{{title}}</p>
-        </div>
+      <div class="container">
+        <h1 id="name">{{name}}</h1>
+        <p id="title">{{title}}</p>
+        <img id="profile-pic" alt="Profile Picture" src="" />
+      </div>
     </header>
 
+    <nav>
+      <ul class="container">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <main class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>{{about}}</p>
-        </section>
+      <section>
+        <h2>About Me</h2>
+        <p id="about">{{about}}</p>
+      </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <p>{{experience}}</p>
-        </section>
+      <section>
+        <h2>Experience</h2>
+        <p id="experience">{{experience}}</p>
+      </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <p>{{education}}</p>
-        </section>
+      <section>
+        <h2>Education</h2>
+        <p id="education">{{education}}</p>
+      </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                {{#each skills}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </section>
+      <section>
+        <h2>Skills</h2>
+        <p id="skills">{{skills}}</p>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>Contact: <a href="mailto:{{email}}">{{email}}</a></p>
-        </div>
+      <div class="container">
+        <p>Contact: <a id="email">{{email}}</a></p>
+      </div>
     </footer>
-</body>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
