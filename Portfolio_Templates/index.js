@@ -25,15 +25,15 @@ function addProject() {
 
                 <div class="mb-3">
                     <label for="project-name-${projectCount}" class="form-label">Project Name</label>
-                    <input type="text" class="form-control portfolioInput project-name" id="project-name-${projectCount}" required oninput="updateProjectPreview(${projectCount})">
+                    <input type="text" class="form-control portfolioInput project-name" id="project-name-${projectCount}" required>
                 </div>
                 <div class="mb-3">
                     <label for="project-description-${projectCount}" class="form-label">Project Description</label>
-                    <textarea class="form-control portfolioInput project-description" id="project-description-${projectCount}" rows="3" required oninput="updateProjectPreview(${projectCount})"></textarea>
+                    <textarea class="form-control portfolioInput project-description" id="project-description-${projectCount}" rows="3" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="github-link-${projectCount}" class="form-label">GitHub Link</label>
-                    <input type="url" class="form-control portfolioInput github-link" id="github-link-${projectCount}" required oninput="updateProjectPreview(${projectCount})">
+                    <input type="url" class="form-control portfolioInput github-link" id="github-link-${projectCount}" required>
                 </div>
                 <div class="mb-3">
                     <label for="project-image-${projectCount}" class="form-label">Project Image</label>
@@ -48,6 +48,11 @@ function addProject() {
 
   // Add the new project fields to the form
   projectsContainer.insertAdjacentHTML("beforeend", newProjectHTML);
+
+  document.getElementById(`project-box-${projectCount}`).addEventListener("input", function () {
+    console.log("foo");
+    refreshIframe();
+  });
 }
 
 // Function to delete a project
