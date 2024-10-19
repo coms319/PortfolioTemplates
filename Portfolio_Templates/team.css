@@ -1,0 +1,105 @@
+/* General Page Layout */
+body {
+    background-color: #1c1c1c;
+    color: #f8f9fa;
+}
+
+.text-muted {
+    color: #b0c4de !important;
+}
+
+/* Navbar */
+.navbar-nav .nav-link.dropdown-toggle {
+    background-color: #05653b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link.dropdown-toggle:hover {
+    background-color: #038030;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+nav {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #f8f9fa;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #05653b;
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
+    background-color: #05653b;
+    color: #fff;
+}
+
+/* Custom Styles for the Team Page */
+.project-description {
+    color: #b0c4de;
+    font-size: 1.2rem;
+}
+
+h1.h2 {
+    color: #76c7c0;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#team .card {
+    background-color: #2c2c2c;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#team .card img {
+    border-radius: 50%;
+    margin: 10px auto;
+    width: 120px;
+    height: 120px;
+}
+
+#team .card-title {
+    font-size: 1.5rem;
+    color: #76c7c0;
+    font-weight: bold;
+}
+
+#team .card-text,
+#team .bio {
+    color: #d1e7ff;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#team .card .role {
+    font-size: 1.1rem;
+    color: #76c7c0;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#team .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

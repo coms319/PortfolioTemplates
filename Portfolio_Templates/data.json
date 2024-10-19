@@ -7,12 +7,6 @@
       "Have fun : )"
     ],
     "images": [
-      "myotherimages/template-preview1.jpeg",
-      "myotherimages/template-preview2.jpeg",
-      "myotherimages/template-preview3.jpeg",
-      "myotherimages/template-preview4.jpeg",
-      "myotherimages/template-preview5.jpeg",
-      "myotherimages/template-preview6.jpeg"
     ]
   },
   "teamPage": {
@@ -21,7 +15,7 @@
         "name": "Lucas Martins Sorge",
         "role": "Full-stack Developer",
         "bio": "Hello, my name is Lucas, and I am a Computer Science and Data Science student at Iowa State University. Throughout my studies and work experience, I have gained strong technical skills in web development, including front-end and back-end technologies such as HTML, CSS, JavaScript, ReactJS, Python, and NodeJS.",
-        "image": "./myotherimages/template-preview1.jpeg"
+        "image": "./myotherimages/about-pic.jpg"
       },
       {
         "name": "Lucas Nerone Rillo",
