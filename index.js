@@ -177,7 +177,7 @@ document
       var zip = new JSZip();
 
       // Step 2: Define the files to add
-      const files = ["index.html", "stylesTemplate01.css", "index.js"];
+      const files = ["index.html", "styles.css", "index.js"];
 
       // Step 3: Fetch all files concurrently using Promise.all
       const filePromises = files.map(async (file) => {
