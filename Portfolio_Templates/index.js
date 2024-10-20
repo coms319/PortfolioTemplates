@@ -3,16 +3,19 @@ let selectedKey = 1; // Variable to store the selected key
 
 // Update profile picture preview
 document.getElementById("profile-pic").addEventListener("change", function () {
-  const file = this.files[0];
+  updatePhoto(this.files[0], "#profile-picture-preview");
+});
+
+function updatePhoto(file, previewSelector) {
   if (file) {
     const reader = new FileReader();
     reader.onload = function (e) {
-      document.querySelector("#profile-picture-preview").src = e.target.result;
+      document.querySelector(previewSelector).src = e.target.result;
       refreshIframe();
     };
     reader.readAsDataURL(file);
   }
-});
+}
 
 function addProject() {
   projectCount += 1;
@@ -40,7 +43,7 @@ function addProject() {
                     <div class="project-image-preview mb-2">
                         <img id="project-image-preview-${projectCount}" src="/Portfolio_Templates/myotherimages/default-placeholder.png" alt="Project Preview" class="rounded" width="120" height="120">
                     </div>
-                    <input type="file" class="form-control portfolioInput project-image" id="project-image-${projectCount}">
+                    <input type="file" class="form-control portfolioInput project-image" id="project-image-${projectCount}" data-key="${projectCount}">
                 </div>
             </div>
         </div>
@@ -52,6 +55,10 @@ function addProject() {
   document.getElementById(`project-box-${projectCount}`).addEventListener("input", function () {
     refreshIframe();
   });
+
+  document.getElementById(`project-image-${projectCount}`).addEventListener("change", function () {
+    updatePhoto(this.files[0], `#project-image-preview-${this.dataset.key}`);
+  })
 }
 
 // Function to delete a project
@@ -78,8 +85,7 @@ function populateFormData() {
     const formData = JSON.parse(storedData);
 
     // Populate basic fields
-    document.getElementById("profile-picture-preview").src =
-      formData.profilePicture;
+    document.getElementById("profile-picture-preview").src = formData.profilePicture;
     document.getElementById("name").value = formData.name || "";
     document.getElementById("title").value = formData.title || "";
     document.getElementById("email").value = formData.email || "";

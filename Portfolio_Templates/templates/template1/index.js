@@ -24,10 +24,10 @@ function populateData(data) {
         data.projects.forEach((project, index) => {
             projectsContainer.innerHTML += `
             <div class="project-box">
+               <img src="${project.image}" alt="Project image" height="100px">
                <p class="project-name">Name: ${project.name}</p>
                <p class="project-description">Description: ${project.description}</p>
                <p class="github-link">Github link: <a href="${project.githubLink}">${project.githubLink}</a></p>
-               <img src="${project.image}" alt="Project image">
             </div>
         `;
         });
