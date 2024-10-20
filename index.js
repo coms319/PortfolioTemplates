@@ -41,7 +41,7 @@ function addProject() {
                 <div class="mb-3">
                     <label for="project-image-${projectCount}" class="form-label">Project Image</label>
                     <div class="project-image-preview mb-2">
-                        <img id="project-image-preview-${projectCount}" src="/Portfolio_Templates/myotherimages/project-placeholder-image.jpg" alt="Project Preview" class="rounded" width="120" height="120">
+                        <img id="project-image-preview-${projectCount}" src="/myotherimages/project-placeholder-image.jpg" alt="Project Preview" class="rounded" width="120" height="120">
                     </div>
                     <input type="file" class="form-control portfolioInput project-image" id="project-image-${projectCount}" data-key="${projectCount}">
                 </div>
