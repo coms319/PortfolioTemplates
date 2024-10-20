@@ -6,7 +6,7 @@ body {
 
 .bg-dark-gradient {
   background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
-  padding: 30px;
+  padding: 3px;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -14,302 +14,6 @@ body {
 nav {
   background-color: #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.bg-dark {
-  /* General Page Layout */
-  body {
-    background-color: #1c1c1c;
-    color: #f8f9fa;
-  }
-
-  nav {
-    background-color: #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .bg-dark {
-    background-color: #1c1c1c !important;
-  }
-
-  .text-light {
-    color: #f8f9fa !important;
-  }
-
-  a {
-    color: #76c7c0;
-    transition: color 0.3s ease;
-  }
-
-  a:hover {
-    color: #58a59c;
-  }
-
-  /* User Information Form Styles */
-  #user-info-form-container {
-    background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .profile-picture-box,
-  .projects-box {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .profile-picture-preview img {
-    border: 2px solid #444;
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .profile-picture-preview img:hover {
-    transform: scale(1.05);
-  }
-
-  .input-information-box {
-    background-color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  #user-info-form .form-control {
-    background-color: #444;
-    border: 1px solid #555;
-    color: #444;
-    border-radius: 0.35rem;
-    padding: 0.75rem;
-    transition: border-color 0.3s ease-in-out;
-  }
-
-  #user-info-form .form-control:focus {
-    border-color: #2b2e2e;
-    outline: none;
-  }
-
-  #user-info-form label {
-    font-weight: bold;
-    color: #d3d4d6;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  #user-info-form .row {
-    display: flex;
-    gap: 15px;
-  }
-
-  #user-info-form button,
-  .btn-dark-green {
-    padding: 0.6rem 2.5rem;
-    background-color: #05653b;
-    border: none;
-    border-radius: 0.35rem;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  #user-info-form button:hover,
-  .btn-dark-green:hover {
-    background-color: #038030;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Template Preview Section */
-  .template-previews-box {
-    background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-  }
-
-  .template-previews-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .template-preview-item {
-    margin-bottom: 15px;
-  }
-
-  .template-preview-item img {
-    max-width: 100%;
-    width: 180px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .template-preview-item img:hover {
-    transform: scale(1.1);
-  }
-
-  .template-preview-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  iframe {
-    border: none;
-    width: 100%;
-    height: 70vh;
-    margin-bottom: 10px;
-  }
-
-  #downloadTemplate {
-    background-color: #05653b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    align-self: center;
-  }
-
-  #downloadTemplate:hover {
-    background-color: #038030;
-    border-color: #1e7e34;
-  }
-
-  /* Navbar Dropdown Styling */
-  .navbar-nav .nav-link.dropdown-toggle {
-    background-color: #05653b;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .navbar-nav .nav-link.dropdown-toggle:hover {
-    background-color: #038030;
-    color: #fff;
-    transform: scale(1.05);
-  }
-
-  /* Dropdown Menu Styling */
-  .nav-item .dropdown-menu {
-    background-color: #343a40;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .dropdown-menu .dropdown-item {
-    color: #f8f9fa;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .dropdown-menu .dropdown-item:hover {
-    background-color: #05653b;
-    color: #fff;
-  }
-
-  .dropdown-menu .dropdown-item:focus,
-  .dropdown-menu .dropdown-item:active {
-    background-color: #05653b;
-    color: #fff;
-  }
-
-  /* Template Preview Section Dropdown Styling */
-  .template-preview-section .dropdown-menu {
-    background-color: #343a40;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .template-preview-section .dropdown-item {
-    color: #f8f9fa;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .template-preview-section .dropdown-item:hover {
-    background-color: #05653b;
-    color: #fff;
-  }
-
-  .template-preview-section .dropdown-item:focus,
-  .template-preview-section .dropdown-item:active {
-    background-color: #05653b;
-    color: #fff;
-  }
-
-  /* Welcome Modal Styling */
-  .modal-content {
-    background-color: #343a40;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .modal-header {
-    border-bottom: 2px solid #555;
-    justify-content: center;
-  }
-
-  .modal-header .modal-title {
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .modal-header .btn-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff6666;
-    border-radius: 50%;
-    padding: 10px;
-  }
-
-  .modal-body p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-
-  .modal-footer {
-    border-top: none;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    background-color: #05653b;
-    border-color: #343a40;
-  }
-
-  .btn-primary:hover {
-    background-color: #038030;
-  }
-
-  background-color: #1c1c1c !important;
-}
-
-.text-light {
-  color: #f8f9fa !important;
 }
 
 a {
@@ -410,17 +114,6 @@ a:hover {
   overflow-y: auto;
 }
 
-.template-previews-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.template-preview-item {
-  margin-bottom: 15px;
-}
-
 .template-preview-item img {
   max-width: 100%;
   width: 180px;
@@ -432,13 +125,6 @@ a:hover {
 
 .template-preview-item img:hover {
   transform: scale(1.1);
-}
-
-.template-preview-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
 }
 
 iframe {
@@ -473,7 +159,6 @@ iframe {
 
 .navbar-nav .nav-link.dropdown-toggle:hover {
   background-color: #038030;
-  color: #fff;
   transform: scale(1.05);
 }
 
@@ -553,30 +238,4 @@ iframe {
 
 .btn-primary:hover {
   background-color: #038030;
-}
-
-/* Dropdown Menu Styling specifically for the template selection */
-#dropdownMenuButton + .dropdown-menu {
-  background-color: #343a40;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  width: 100%;
-}
-
-#dropdownMenuButton + .dropdown-menu .dropdown-item {
-  color: #f8f9fa;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#dropdownMenuButton + .dropdown-menu .dropdown-item:hover {
-  background-color: #05653b;
-  color: #fff;
-}
-
-#dropdownMenuButton + .dropdown-menu .dropdown-item:focus,
-#dropdownMenuButton + .dropdown-menu .dropdown-item:active {
-  background-color: #05653b;
-  color: #fff;
 }
