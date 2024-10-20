@@ -172,9 +172,13 @@ iframe {
 }
 
 .dropdown-menu .dropdown-item {
-  color: #f8f9fa;
+  color: black;
   padding: 10px 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .dropdown-menu .dropdown-item {
+  color: #f8f9fa;
 }
 
 .dropdown-menu .dropdown-item:hover {
