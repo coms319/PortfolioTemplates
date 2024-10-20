@@ -177,7 +177,7 @@ document
       var zip = new JSZip();
 
       // Step 2: Define the files to add
-      const files = ["index.html", "styles.css", "index.js"];
+      const files = ["index.html", "stylesTemplate01.css", "index.js"];
 
       // Step 3: Fetch all files concurrently using Promise.all
       const filePromises = files.map(async (file) => {
@@ -232,3 +232,52 @@ function showWelcomeModal() {
 
 // Call the function to show the welcome modal
 showWelcomeModal();
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+        // Load Navbar Image
+        const navbarImage = document.getElementById("navbarImage");
+        navbarImage.src = data.navbar.image;
+        navbarImage.alt = data.navbar.altText;
+
+        // Load Templates
+        const templateDropdown = document.getElementById("templateDropdown");
+        const templateFrame = document.getElementById("templateFrame");
+
+        data.templates.forEach(template => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.classList.add("dropdown-item");
+          a.href = "#";
+          a.innerText = template.name;
+          a.addEventListener("click", function () {
+            templateFrame.src = `templates/template${template.id}/index.html`;
+          });
+
+          li.appendChild(a);
+          templateDropdown.appendChild(li);
+        });
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+});
+
+$(document).ready(function () {
+  $.getJSON("data.json", function (data) {
+    const navbarImage = data.navbar.image;
+    const navbarAltText = data.navbar.altText;
+    $('#navbarImage').attr('src', navbarImage).attr('alt', navbarAltText);
+
+    // Profile picture from homePage
+    const profileImage = data.homePage.profileImage;
+    if (profileImage && profileImage.url) {
+      $('#profile-picture-preview').attr('src', profileImage.url);
+    } else {
+      $('#profile-picture-preview').attr('src', 'default-profile.png');
+    }
+    if (profileImage.alt) {
+      $('#profile-picture-preview').attr('alt', profileImage.alt);
+    }
+  });
+});

@@ -1,288 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio Generator</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body class="bg-dark text-light">
-    <!-- Top Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html" style="font-size: 30px">
-          <img src="myotherimages/professional-portfolio.png" alt="" height="36px" class="d-inline-block align-text-top">
-          Portfolio Generator
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Generator</title>
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+  />
+  <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="styles/index.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body class="bg-dark text-light">
+
+<!-- Top Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.html" style="font-size: 30px">
+      <img id="navbarImage" src="" alt="" height="36px" class="d-inline-block align-text-top">
+      Portfolio Generator
+    </a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+          >
+            <i class="bi bi-layout-text-sidebar-reverse"></i> Templates
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                      class="dropdown-item"
+                      href="templates/template1/index.html"
+              >Template 1</a
               >
-                <i class="bi bi-layout-text-sidebar-reverse"></i> Templates
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="templates/template1/index.html"
-                    >Template 1</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="templates/template2/index.html"
-                    >Template 2</a
-                  >
-                </li>
-              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team.html"
-                ><i class="bi bi-people-fill"></i> Team</a
+            <li>
+              <a
+                      class="dropdown-item"
+                      href="templates/template2/index.html"
+              >Template 2</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="team.html"
+          ><i class="bi bi-people-fill"></i> Team</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content Layout -->
+<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="row w-100" style="max-width: 1200px;">
+    <!-- Enter Your Information Box -->
+    <div class="col-md-6 d-flex flex-column">
+      <div id="user-info-form-container" class="bg-dark-gradient p-2 rounded">
+        <h4 class="mb-4 text-start">Enter Your Information</h4>
+
+        <!-- Profile Picture Box -->
+        <div class="profile-picture-box mb-4 p-2 bg-dark rounded">
+          <label for="profile-pic" class="form-label">Profile Picture</label>
+          <div class="profile-picture-preview mb-2">
+            <img
+                    id="profile-picture-preview"
+                    src=""
+                    alt="Profile Preview"
+                    class="rounded-circle"
+                    width="120"
+                    height="120"
+            />
+          </div>
+          <input type="file" class="form-control portfolioInput" id="profile-pic" />
+        </div>
+
+        <!-- Input Information Box -->
+        <div class="input-information-box bg-dark p-2 rounded mb-4">
+          <form id="user-form">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Full Name</label>
+                <input
+                        type="text"
+                        class="form-control portfolioInput"
+                        id="name"
+                        required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="title" class="form-label"
+                >Professional Title</label
+                >
+                <input
+                        type="text"
+                        class="form-control portfolioInput"
+                        id="title"
+                        required
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input
+                        type="email"
+                        class="form-control portfolioInput"
+                        id="email"
+                        required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="education" class="form-label">Education</label>
+                <input
+                        type="text"
+                        class="form-control portfolioInput"
+                        id="education"
+                        required
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="about" class="form-label">About Me</label>
+              <textarea
+                      class="form-control portfolioInput"
+                      id="about"
+                      rows="4"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="experience" class="form-label"
+              >Professional Experience</label
+              >
+              <textarea
+                      class="form-control portfolioInput"
+                      id="experience"
+                      rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="skills" class="form-label">Skills</label>
+              <textarea
+                      class="form-control portfolioInput"
+                      id="skills"
+                      rows="3"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- Projects Box -->
+        <div class="projects-box bg-dark p-2 rounded">
+          <h5>Projects</h5>
+          <div id="projects-container" class="row"></div>
+          <button
+                  type="button"
+                  class="btn btn-dark-green mt-3"
+                  onclick="addProject()"
+          >
+            Add Project
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Preview -->
+    <div class="col-md-6 d-flex flex-column">
+      <div
+              id="template-preview-container"
+              class="bg-dark-gradient p-4 rounded"
+      >
+        <h4 class="mb-4 text-start">Template Preview</h4>
+
+        <div class="dropdown w-100">
+          <button
+                  class="btn btn-dark-green w-100 dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+          >
+            Template 1
+          </button>
+          <ul
+                  class="dropdown-menu w-100"
+                  aria-labelledby="dropdownMenuButton"
+          >
+            <li>
+              <a
+                      class="dropdown-item template-download-item"
+                      href="#"
+                      data-key="1"
+              >Template 1</a
+              >
+            </li>
+            <li>
+              <a
+                      class="dropdown-item template-download-item"
+                      href="#"
+                      data-key="2"
+              >Template 2</a
               >
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
 
-    <!-- Main Content Layout -->
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-      <div class="row w-100" style="max-width: 1200px;">
-        <!-- Enter Your Information Box -->
-        <div class="col-md-6 d-flex flex-column">
-          <div id="user-info-form-container" class="bg-dark-gradient p-2 rounded">
-            <h4 class="mb-4 text-start">Enter Your Information</h4>
+        <iframe
+                id="templateFrame"
+                src="templates/template1/index.html"
+                style="transform: scale(1); transform-origin: top left; height: 160vh; background-color: white;"
+        ></iframe>
 
-            <!-- Profile Picture Box -->
-            <div class="profile-picture-box mb-4 p-2 bg-dark rounded">
-              <label for="profile-pic" class="form-label">Profile Picture</label>
-              <div class="profile-picture-preview mb-2">
-                <img
-                        id="profile-picture-preview"
-                        src="/myotherimages/default-placeholder.png"
-                        alt="Profile Preview"
-                        class="rounded-circle"
-                        width="120"
-                        height="120"
-                />
-              </div>
-              <input type="file" class="form-control portfolioInput" id="profile-pic" />
-            </div>
-
-            <!-- Input Information Box -->
-            <div class="input-information-box bg-dark p-2 rounded mb-4">
-              <form id="user-form">
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input
-                      type="text"
-                      class="form-control portfolioInput"
-                      id="name"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="title" class="form-label"
-                      >Professional Title</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control portfolioInput"
-                      id="title"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input
-                      type="email"
-                      class="form-control portfolioInput"
-                      id="email"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="education" class="form-label">Education</label>
-                    <input
-                      type="text"
-                      class="form-control portfolioInput"
-                      id="education"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label for="about" class="form-label">About Me</label>
-                  <textarea
-                    class="form-control portfolioInput"
-                    id="about"
-                    rows="4"
-                  ></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="experience" class="form-label"
-                    >Professional Experience</label
-                  >
-                  <textarea
-                    class="form-control portfolioInput"
-                    id="experience"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="skills" class="form-label">Skills</label>
-                  <textarea
-                    class="form-control portfolioInput"
-                    id="skills"
-                    rows="3"
-                  ></textarea>
-                </div>
-              </form>
-            </div>
-
-            <!-- Projects Box -->
-            <div class="projects-box bg-dark p-2 rounded">
-              <h5>Projects</h5>
-              <div id="projects-container" class="row"></div>
-              <button
-                type="button"
-                class="btn btn-dark-green mt-3"
-                onclick="addProject()"
-              >
-                Add Project
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dynamic Preview -->
-        <div class="col-md-6 d-flex flex-column">
-          <div
-            id="template-preview-container"
-            class="bg-dark-gradient p-4 rounded"
+        <div class="d-flex justify-content-center">
+          <button
+                  id="downloadTemplate"
+                  class="btn btn-dark-green mt-3 w-50"
           >
-            <h4 class="mb-4 text-start">Template Preview</h4>
+            Download Template
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div class="dropdown w-100">
-              <button
-                class="btn btn-dark-green w-100 dropdown-toggle"
+<!-- Welcome Modal -->
+<div
+        class="modal fade"
+        id="welcomeModal"
+        tabindex="-1"
+        aria-labelledby="welcomeModalLabel"
+        aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="welcomeMessageText"></p>
+      </div>
+      <div class="modal-footer">
+        <button
                 type="button"
-                id="dropdownMenuButton"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Template 1
-              </button>
-              <ul
-                class="dropdown-menu w-100"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <li>
-                  <a
-                    class="dropdown-item template-download-item"
-                    href="#"
-                    data-key="1"
-                    >Template 1</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item template-download-item"
-                    href="#"
-                    data-key="2"
-                    >Template 2</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <iframe
-              id="templateFrame"
-              src="templates/template1/index.html"
-              style="
-                transform: scale(1);
-                transform-origin: top left;
-                height: 160vh;
-                background-color: white;
-              "
-            ></iframe>
-
-            <div class="d-flex justify-content-center">
-              <button
-                id="downloadTemplate"
-                class="btn btn-dark-green mt-3 w-50"
-              >
-                Download Template
-              </button>
-            </div>
-          </div>
-        </div>
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+        >
+          Close
+        </button>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Welcome Modal -->
-    <div
-      class="modal fade"
-      id="welcomeModal"
-      tabindex="-1"
-      aria-labelledby="welcomeModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-center bg-dark text-light">
-          <div class="modal-header">
-            <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
-          </div>
-          <div class="modal-body">
-            <p id="welcomeMessageText"></p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="index.js"></script>
-  </body>
+<script src="index.js"></script>
+</body>
 </html>

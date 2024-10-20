@@ -1,11 +1,19 @@
 {
+  "navbar": {
+    "image": "./myotherimages/professional-portfolio.png",
+    "altText": "Professional portfolio image to represent the logo of our website"
+  },
   "homePage": {
     "texts": [
       "Welcome to the Portfolio Generator!",
       "Create your personalized portfolio website in just a few easy steps.",
       "Choose a template, enter your information, and download your website.",
       "Have fun : )"
-    ]
+    ],
+    "profileImage": {
+      "url": "./myotherimages/default-placeholder.png",
+      "alt": "Default profile picture for new users"
+    }
   },
   "teamPage": {
     "teamMembers": [
@@ -13,13 +21,15 @@
         "name": "Lucas Martins Sorge",
         "role": "Full-stack Developer",
         "bio": "Hello, my name is Lucas, and I am a Computer Science and Data Science student at Iowa State University. Throughout my studies and work experience, I have gained strong technical skills in web development, including front-end and back-end technologies such as HTML, CSS, JavaScript, ReactJS, Python, and NodeJS.",
-        "image": "./myotherimages/about-pic.jpg"
+        "image": "./myotherimages/about-pic.jpg",
+        "altText": "Profile picture of Lucas Martins Sorge, Full-stack Developer"
       },
       {
         "name": "Lucas Nerone Rillo",
         "role": "Full-stack Developer",
-        "bio": "Hi, I am Lucas, a Computer Sciuence and Math student at Iowa State University. Through my experience with full-stack development, I learned jQuery, Angular, and React for the frontend, as well as Spring Boot and Django for the backend.",
-        "image": "./myotherimages/about-pic-2.jpg"
+        "bio": "Hi, I am Lucas, a Computer Science and Math student at Iowa State University. Through my experience with full-stack development, I learned jQuery, Angular, and React for the frontend, as well as Spring Boot and Django for the backend.",
+        "image": "./myotherimages/about-pic-2.jpg",
+        "altText": "Profile picture of Lucas Nerone Rillo, Full-stack Developer"
       }
     ]
   }
